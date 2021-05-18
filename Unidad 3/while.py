@@ -55,26 +55,3 @@ def continueWhile():
         print(f'Estado de var es {var}')
 
 # continueWhile()
-
-'''
-a, b = 0, 1
-while b < 100:
-    print(b),
-    a, b = b, a + b
-'''
-
-# Obtener la serie de Fibonacci dado un valor inicial y un limite.
-# La serie debe empezar en el valor inicial.
-def fibonacciModificado(num:int=0, limite:int=10)->str:
-    auxLimite = 1
-    print(num)
-    while auxLimite <= limite:
-        num, auxLimite = auxLimite, num + auxLimite
-        print(num, auxLimite)
-        auxLimite = auxLimite + 1
-
-
-#fibonacciModificado()
-
-
-
