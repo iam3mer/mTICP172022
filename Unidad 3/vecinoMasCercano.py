@@ -59,5 +59,5 @@ distanciasEjemplo = {('H', 'H'): 0, ('H', 'A'): 21, ('H', 'B'): 57, ('H', 'C'): 
 ('F', 'H'): 267, ('F', 'A'): 61, ('F', 'B'): 79, ('F', 'C'): 39, ('F', 'D'): 135, ('F', 'E'): 55, ('F', 'F'): 0}
 
 nodosEjemplo = ['H', 'A', 'B', 'C', 'D', 'E', 'F']
-#nodosEjemplo = ['H', 'A', 'B']
+#nodosEjemplo = ['H', 'A', 'B'] # {'ruta': [('H', 'A'), ('A', 'B'), ('B', 'H')], 'kilometraje': 405}
 print(RutaInicialVecinoMasCercano(distanciasEjemplo, nodosEjemplo))
