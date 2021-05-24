@@ -1,50 +1,6 @@
-# CRUD (Create, Read, Update, Delete)
+from logica import *
 
-directorio = {
-    1254587: {
-        'nombre': 'Jhonatan',
-        'ciudad': 'Pereira',
-        'profesion': 'Ingeniero de Sistemas y Computación',
-        'habilidades': {
-            'programacion': True,
-            'bases_de_datos': True,
-            'cocina': True,
-            'frances': False
-        }
-    },
-    2548754: {
-        'nombre': 'Octavio',
-        'ciudad': 'Manizales',
-        'profesion': 'Ecomista',
-        'habilidades': {
-            'programacion': False,
-            'bases_de_datos': False,
-            'cocina': True,
-            'frances': True
-        }
-    }
-}
-
-
-def comprobacionSN(msj:str)->bool:
-    while True:
-        entra = input(msj)
-        if entra == 'S' or entra == 's' or entra == 'Si' or entra == 'si':
-            return True
-        elif entra == 'N' or entra == 'n' or entra == 'No' or entra == 'no':
-            return False
-        #else:
-        #    continue
-
-
-def comprobarNum(msj:str)->int:
-    while True:
-        numero = input(msj)
-        if numero.isdigit():
-            return int(numero)
-            
-
-def menu(db:dict)->None:
+def menu()->None:
 
     while True:
         print('----- CRUD -----')
@@ -57,21 +13,20 @@ def menu(db:dict)->None:
         opcion = input('Ingrese una opción del menu: ')
 
         if opcion == '1':
-            db = crear(db)
+            db = crear_persona()
         elif opcion == '2':
-            imprimir(db)
+            imprimir_persona()
         elif opcion == '3':
-            db = actualizar(db)
+            db = actualizar_persona()
         elif opcion == '4':
-            db = eliminar(db)
+            db = eliminar_persona()
         elif opcion == '5':
             break
         else:
             print('La opción no es valida.')
 
-
 # CREATE
-def crear(db:dict)->dict:
+def crear_persona()->dict:
 
     dictHabilidades = {}
     
@@ -118,28 +73,32 @@ def crear(db:dict)->dict:
     }
 
     # newItem = len(directorio) + 1 # Fue remplazado por nuip
-    directorio[nuip] = persona
-
-    return db
+    #directorio[nuip] = persona
+    crear(nuip, persona)
 
 
 # READ
-def imprimir(db:dict)->None:
+def imprimir_persona(db:dict)->None:
     msj = 'Ingrese el numero de documento de la persona a mostrar: '
     nuip = comprobarNum(msj)
     # Falta validar si la llave principal existe
 
-    print(f'La información de {db[nuip]["nombre"]} es')
-    print(f'Ciudad de residencia: {db[nuip]["ciudad"]}')
-    print(f'Su profesión es: {db[nuip]["profesion"]}')
-    print(f'Habilidades: {db[nuip]["habilidades"]}')
+    persona = imprimir(nuip)
+
+    print(f'La información de {persona["nombre"]} es: ')
+    print(f'Ciudad de residencia: {persona["ciudad"]}')
+    print(f'Su profesión es: {persona["profesion"]}')
+    print(f'Habilidades: {persona["habilidades"]}')
 
 
 # UPDATE
-def actualizar(db:dict)->dict:
+def actualizar_persona(db:dict)->dict:
     msj = 'Ingrese el numero de documento de la persona a consultar: '
     nuip = comprobarNum(msj)
     # Falta validar si la llave principal existe
+
+    # persona:dict
+    # construir el diccionario con la información a actualizar de persona
 
     msj = 'Quiere actualizar el nombre? [S/s] Sí [N/n] No'
     if comprobacionSN(msj):
@@ -151,32 +110,19 @@ def actualizar(db:dict)->dict:
         ciudad = input('Ingrese la ciudad: ')
         db[nuip].update({'ciudad': ciudad})
 
-    return db
+    actualizar(nuip, persona)
 
 
 # DELETE
-def eliminar(db:dict)->dict:
+def eliminar_persona(db:dict)->dict:
     msj = 'Ingrese el numero de documento de la persona a eliminar: '
     nuip = comprobarNum(msj)
     # Falta validar si la llave principal existe
 
-    persona = db.pop(nuip)
+    eliminar(nuip))
 
     print(f'La iformación de {persona["nombre"]} fue eliminada.')
 
     return db
 
-
-#dbActualizada = crear(directorio)
-#dbActualizada = crear(dbActualizada)
-#dbActualizada = crear(dbActualizada)
-#dbActualizada = crear(dbActualizada)
-#print(dbActulizada)
-
-#dbActulizada = actualizar(directorio)
-#print(dbActulizada)
-
-#dbActualizada = eliminar(directorio)
-#print(dbActualizada)
-
-menu(directorio)
+menu()
