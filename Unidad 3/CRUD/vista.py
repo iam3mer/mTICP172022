@@ -13,13 +13,13 @@ def menu()->None:
         opcion = input('Ingrese una opción del menu: ')
 
         if opcion == '1':
-            db = crear_persona()
+            crear_persona()
         elif opcion == '2':
             imprimir_persona()
         elif opcion == '3':
-            db = actualizar_persona()
+            actualizar_persona()
         elif opcion == '4':
-            db = eliminar_persona()
+            eliminar_persona()
         elif opcion == '5':
             break
         else:
