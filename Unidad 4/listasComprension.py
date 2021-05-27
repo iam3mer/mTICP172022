@@ -1,3 +1,6 @@
+from pprint import PrettyPrinter
+pp = PrettyPrinter(indent=2)
+
 # Estructuras por extensión
 
 numeros = [1,5,3,4,8,2,5,7]
@@ -124,4 +127,52 @@ def tablas(num:int)->dict:
 #print(tablas(10))
 
 tablasDict = {f'Tabla del {n}': [n*z for z in range(2,10)] for n in range(2,11)}
-print(tablasDict)
+#print(tablasDict)
+
+# Ejemplo X
+listaLLaves = ['1','2','3','4','5','6','7','8']
+#diccionario = {1: 1, 2: 8, ...}
+diccionario = {int(n) : int(n)**3 for n in listaLLaves}
+#print(diccionario)
+
+# {('A', 'B'): 45, ...}
+from random import randint, randrange, random, uniform
+listaCiudades = ['a','b','c','d','e','f']
+# (a,b) (b,a) (a,c) (c,a) (a,d) (d,a) (a,e) (e,a) (a,f) (f,a)
+# matrizDistancias = [[(a,b), (a,c)], [(b,a), (b,c)]]
+arcos = {i: [(i,j) for j in listaCiudades if j != i] for i in listaCiudades}
+#arcos = [(i, j) for i in listaCiudades for j in listaCiudades if i != j]
+auxArcos = []
+#print(list(arcos.symmetric_difference(arcos)))
+
+arcos = list(arcos.values())
+pp.pprint(arcos)
+print('\n')
+
+def auxArcos():
+    auxArcos = []
+    i = 0
+    for fila in arcos:
+        aux = fila[i:len(fila)]
+        if aux != []:
+            auxArcos.append(aux)
+        i += 1
+    return auxArcos
+
+arcos = auxArcos()
+
+auxArcos = []
+for i in arcos:
+    for j in i:
+        auxArcos.append(j)
+print(auxArcos)
+
+numDistancias = len(auxArcos)
+Distancias = []
+for i in range(numDistancias):
+    Distancias.append(randrange(30,1000,30))
+
+print(Distancias)
+
+arcosDistancias = {arco: distancia for distancia in Distancias for arco in auxArcos}
+print(arcosDistancias)
