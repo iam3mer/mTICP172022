@@ -146,8 +146,8 @@ auxArcos = []
 #print(list(arcos.symmetric_difference(arcos)))
 
 arcos = list(arcos.values())
-pp.pprint(arcos)
-print('\n')
+#pp.pprint(arcos)
+#print('\n')
 
 def auxArcos():
     auxArcos = []
@@ -165,14 +165,21 @@ auxArcos = []
 for i in arcos:
     for j in i:
         auxArcos.append(j)
-print(auxArcos)
+#print(auxArcos)
+#print(auxArcos[0][::-1])
 
 numDistancias = len(auxArcos)
 Distancias = []
 for i in range(numDistancias):
     Distancias.append(randrange(30,1000,30))
 
-print(Distancias)
+#print(Distancias)
 
-arcosDistancias = {arco: distancia for distancia in Distancias for arco in auxArcos}
+# [(a,b), 23, (a,c), 45]
+arcosDistancias = {}
+for arco in auxArcos:
+    dis = Distancias[auxArcos.index(arco)]
+    arcosDistancias[arco] = dis
+    arcosDistancias[arco[::-1]] = dis
 print(arcosDistancias)
+
