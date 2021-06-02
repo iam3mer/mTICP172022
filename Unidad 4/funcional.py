@@ -86,3 +86,11 @@ personas = map(incrementar, personas)
 
 for persona in personas:
     print(persona)
+
+# ZIP zip(secuencia1, secuencia2)
+letras = ['a', 'b', 'c', 'd', 'e']
+print(letras)
+numeros = [1, 2, 3, 4, 5]
+resultadoZIP = list(zip(letras, numeros))
+
+print(list(map(lambda x: x[::-1], resultadoZIP)))
