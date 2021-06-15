@@ -1,0 +1,28 @@
+{
+    "tripulantes": [
+        {
+            "apellido": "Aristizabal",
+            "edad": 21,
+            "nombre": "Alejandro",
+            "notas": [
+                4,
+                4.8
+            ]
+        },
+        {
+            "apellido": "Giraldo",
+            "edad": 19,
+            "nombre": "Andres",
+            "notas": 4.5
+        },
+        {
+            "apellido": "Tabares",
+            "edad": 24,
+            "nombre": "David",
+            "notas": [
+                5,
+                5
+            ]
+        }
+    ]
+}
