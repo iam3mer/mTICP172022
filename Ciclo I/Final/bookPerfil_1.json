@@ -1,0 +1,35 @@
+{
+    "title":{
+        "0":"Unlocking Android",
+        "1":"Android in Action, Second Edition",
+        "2":"Specification by Example",
+        "3":"Flex 3 in Action",
+        "4":"Flex 4 in Action",
+        "5":"Collective Intelligence in Action",
+        "6":"Zend Framework in Action"
+    },
+    "categories":{
+        "0":[
+            "Open Source",
+            "Mobile"
+        ],
+        "1":[
+            "Java"
+        ],
+        "2":[
+            "Software Engineering"
+        ],
+        "3":[
+            "Internet"
+        ],
+        "4":[
+            "Internet"
+        ],
+        "5":[
+            "Internet"
+        ],
+        "6":[
+            "Web Development"
+        ]
+    }
+}
