@@ -11,7 +11,7 @@ public class Nota {
     Nota() {
         this.escala100 = 0;
         this.escala5 = 0.0;
-        this.escalaCualitativa = "notaCualitativa";
+        this.escalaCualitativa = "";
     }
 
     Nota(Integer pEscala100) {
@@ -30,7 +30,8 @@ public class Nota {
     
     Nota(Double pEscala5) {
         //this.escala100 = pEscala5 * 20;
-        setEscala100(Integer.parseInt(Double.toString(pEscala5)) * 20);
+        //setEscala100(Integer.parseInt(Double.toString(pEscala5)) * 20);
+        setEscala100((int)(pEscala5 * 20));
         //this.escala5 = pEscala5;
         setEscala5(pEscala5);
         if (pEscala5 >= 3.0) {
@@ -46,7 +47,7 @@ public class Nota {
     public void mostrarNota() {
         System.out.println("------EscalaNotas------");
         System.out.printf("Nota en escala de 5 : %.2f\n", this.escala5);
-        System.out.printf("Nota en escala de 100: %d\n", this.escala100);
+        System.out.printf("Nota en escala de 100: %d\n", getEscala100());
         System.out.printf("Nota en escala cualitativa: %s\n", this.escalaCualitativa);
     }
 
@@ -73,5 +74,7 @@ public class Nota {
     public void setEscalaCualitativa(String escalaCualitativa) {
         this.escalaCualitativa = escalaCualitativa;
     }
+
+    
     
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>notas_oop</name>
+	<name>empleados</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1625667042292</id>
+			<id>1625668897580</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
