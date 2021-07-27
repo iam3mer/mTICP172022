@@ -184,4 +184,67 @@ join departments d ON (e.department_id = d.department_id)
 NATURAL JOIN locations l 
 WHERE l.location_id = 1700;
 
+SELECT last_name, salary
+from employees e 
+where salary > (
+	SELECT salary 
+	from employees e2 
+	where last_name = 'Baida'
+	);
+
+SELECT department_id, min(salary)
+from employees e 
+group by department_id
+having min(salary) > (
+	SELECT min(salary)
+	from employees e2 
+	where department_id = 5
+	);
+
+SELECT  last_name, job_id, salary
+from employees e 
+where job_id = (
+	SELECT job_id 
+	from employees e2 
+	where last_name = 'Popp'
+	)
+and salary > (
+	SELECT salary 
+	from employees e3 
+	WHERE last_name = 'Popp'
+	);
+
+SELECT round(avg_salary)
+FROM (
+	select AVG(salary) avg_salary
+	from employees e 
+	group by department_id
+	);
+
+SELECT last_name,
+		salary,
+		(SELECT round(AVG(salary)) from employees e ) avg_salary,
+		salary - (select round(AVG(salary)) from employees e2 ) diferencia
+from employees e2 
+
+WITH
+dept_co AS (
+	select d.department_name, SUM(e.salary) as dept_total
+	from employees e 
+	join departments d on e.department_id = d.department_id 
+	GROUP BY d.department_name 
+),
+avg_cost AS (
+	SELECT sum(dept_total)/count(*) dept_avg
+	from dept_co
+	) 
+SELECT * 
+	from dept_co
+	where dept_total > (
+		SELECT dept_avg
+		from avg_cost
+		)
+order by department_name;
+
+
 
