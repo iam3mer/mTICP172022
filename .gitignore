@@ -43,3 +43,6 @@ buildNumber.properties
 .settings/*
 
 .project
+
+.dbeaver-data-sources*.xml
+.dbeaver/*

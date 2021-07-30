@@ -11,6 +11,19 @@
 				"database": "C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P17\\Ciclo II\\Unidad 3\\DB\\primerDB.db",
 				"url": "jdbc:sqlite:C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P17\\Ciclo II\\Unidad 3\\DB\\primerDB.db",
 				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17abeafc04b-a9c7e38b428c48c": {
+			"provider": "generic",
+			"driver": "sqlite_jdbc",
+			"name": "hr.db",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P47\\Ciclo II\\Unidad 3\\DB\\hr.db",
+				"url": "jdbc:sqlite:C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P47\\Ciclo II\\Unidad 3\\DB\\hr.db",
+				"type": "dev",
 				"auth-model": "native",
 				"handlers": {}
 			}
