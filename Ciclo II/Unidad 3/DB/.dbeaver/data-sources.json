@@ -37,6 +37,19 @@
 				"database": "C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P17\\Ciclo II\\Unidad 4\\bookshop\\BookShop.db",
 				"url": "jdbc:sqlite:C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P17\\Ciclo II\\Unidad 4\\bookshop\\BookShop.db",
 				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"sqlite_jdbc-17b0bea09bb-3ae7798c05267747": {
+			"provider": "generic",
+			"driver": "sqlite_jdbc",
+			"name": "BookShop.db 2",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P17\\Ciclo II\\Unidad 4\\bookshop_mvc\\BookShop.db",
+				"url": "jdbc:sqlite:C:\\Users\\3mer\\Documents\\UTP\\2021\\MISIONTIC2021\\Grupos\\P17\\Ciclo II\\Unidad 4\\bookshop_mvc\\BookShop.db",
+				"type": "dev",
 				"auth-model": "native",
 				"handlers": {}
 			}
