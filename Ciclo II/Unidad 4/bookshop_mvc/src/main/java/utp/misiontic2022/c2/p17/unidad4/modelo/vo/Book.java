@@ -14,6 +14,11 @@ public class Book {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return year+" "+title+" ("+isbn+")";
+    }
+
     public String getTitle() {
         return title;
     }

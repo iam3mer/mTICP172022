@@ -11,7 +11,7 @@ import utp.misiontic2022.c2.p17.unidad4.util.JDBCUtilities;
 
 public class BookDao {
 
-    public Book save(Book book) throws SQLException {
+    public Book guardar(Book book) throws SQLException {
 
         String psql = "INSERT INTO books (title,isbn,year) VALUES (?, ?, ?)";
 
@@ -27,6 +27,61 @@ public class BookDao {
         }
         
         return book;
+    }
+
+    public boolean actualizar(Book book) throws SQLException {
+        boolean band = false;
+
+        String sql = "UPDATE books SET title = '"+book.getTitle()+"', year = "+book.getYear()+" WHERE isbn = '"+book.getIsbn()+"'";
+
+        try (
+            Connection conn = JDBCUtilities.getConnection();
+            Statement stmt = conn.createStatement();
+        ) {
+            stmt.executeUpdate(sql);
+            band = true;
+        }
+
+        return band;
+    }
+
+    public boolean eliminar(String isbn) throws SQLException {
+        boolean band;
+
+        String sql = "DELETE FROM books WHERE isbn = '"+isbn+"';";
+
+        try (
+            Connection conn = JDBCUtilities.getConnection();
+            Statement stmt = conn.createStatement();
+        ) {
+
+            stmt.executeUpdate(sql);
+            band = true;
+        } 
+
+        return band;
+    }
+
+    public boolean validarVenta(String isbn) throws SQLException {
+        boolean band = true;
+
+        String sql = "SELECT count() as sale FROM sales s JOIN books b WHERE b.id = s.id_book AND b.isbn = '"+isbn+"';";
+        
+        try (
+            Connection conn = JDBCUtilities.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+        ) {
+
+            if (rs.next()) { 
+                int sale = rs.getInt("sale");
+                if (sale == 0) {
+                    band = false;
+                }
+            }
+        } 
+
+        return band;
     }
 
     public int validarISBN(String isbn) throws SQLException {
@@ -49,4 +104,26 @@ public class BookDao {
     }
 }
 
+    public Book buscarISBN (String isbn) throws SQLException {
+        Book book = null;
+        ResultSet rs = null;
+
+        String sql = "SELECT title, isbn, year FROM books where isbn = '"+isbn+"';";
+
+        try (
+            Connection conn = JDBCUtilities.getConnection();
+            Statement stmt = conn.createStatement();
+        ) {
+            rs = stmt.executeQuery(sql);
+
+            if (rs.next()) {
+                book = new Book();
+                book.setTitle(rs.getString("title"));
+                book.setIsbn(rs.getString("isbn"));
+                book.setYear(rs.getInt("year"));
+            }
+        } 
+
+        return book;
+    }
 }
