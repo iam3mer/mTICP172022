@@ -36,4 +36,27 @@ public class SaleDao {
         } 
         return id_book;
     }
+
+    public boolean validarVenta(String isbn) throws SQLException {
+        boolean band = true;
+
+        String sql = "SELECT count() as sale FROM sales s JOIN books b WHERE b.id = s.id_book AND b.isbn = '"+isbn+"';";
+        
+        try (
+            Connection conn = JDBCUtilities.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+        ) {
+
+            if (rs.next()) { 
+                int sale = rs.getInt("sale");
+                if (sale == 0) {
+                    band = false;
+                }
+            }
+        } 
+
+        return band;
+    }
+
 }

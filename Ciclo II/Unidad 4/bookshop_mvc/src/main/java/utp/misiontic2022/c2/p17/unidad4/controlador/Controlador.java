@@ -1,19 +1,23 @@
 package utp.misiontic2022.c2.p17.unidad4.controlador;
 
 import utp.misiontic2022.c2.p17.unidad4.modelo.vo.Book;
+import utp.misiontic2022.c2.p17.unidad4.modelo.vo.Stock;
 
 import java.sql.SQLException;
 
 import utp.misiontic2022.c2.p17.unidad4.modelo.dao.BookDao;
 import utp.misiontic2022.c2.p17.unidad4.modelo.dao.SaleDao;
+import utp.misiontic2022.c2.p17.unidad4.modelo.dao.StockDao;
 
 public class Controlador {
     private final BookDao bookDao;
     private final SaleDao saleDao;
+    private final StockDao stockDao;
 
     public Controlador() {
         this.bookDao = new BookDao();
         this.saleDao = new SaleDao();
+        this.stockDao = new StockDao();
     }
 
     public Book createBook(String title, String isbn, int year) {
@@ -42,6 +46,20 @@ public class Controlador {
         return book;
     }
 
+    public void createStock(String isbn, int amount) throws SQLException {
+        int id_book = bookDao.buscarISBN(isbn).getId();
+        createStock(id_book, amount);
+    }
+
+    public void createStock(int id_book, int amount)  throws SQLException {
+        Stock stock = new Stock();
+
+        stock.setId_book(id_book);
+        stock.setAmount(amount);
+
+        stockDao.guardar(stock);
+    }
+
     public Book readBook(String isbn) throws SQLException {
         Book book = bookDao.buscarISBN(isbn);
 
@@ -67,13 +85,15 @@ public class Controlador {
         int band = bookDao.validarISBN(isbn);
 
         if (band != -1) {
-            if (bookDao.validarVenta(isbn) == false) {
+            if (saleDao.validarVenta(isbn) == false) {
+                int id_book = bookDao.buscarISBN(isbn).getId();
                 delete = bookDao.eliminar(isbn);
-                int id_book = saleDao.consultarIDSale(isbn);
-                saleDao.eliminar(id_book);
+                if (delete) {
+                    System.out.println(id_book);
+                    stockDao.delete(id_book);
+                }
             }
         }
-
         return delete;
     }
 

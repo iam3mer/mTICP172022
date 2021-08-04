@@ -4,14 +4,15 @@ public class Book {
     private String title;
     private String isbn;
     private int year;
-    //private int id;
+    private int id;
 
     public Book(){}
     
-    public Book(String title, String isbn, int year) {
+    public Book(String title, String isbn, int year, int id) {
         this.title = title;
         this.isbn = isbn;
         this.year = year;
+        this.id = id;
     }
 
     @Override
@@ -42,4 +43,14 @@ public class Book {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
 }

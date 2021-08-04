@@ -46,7 +46,7 @@ public class BookDao {
     }
 
     public boolean eliminar(String isbn) throws SQLException {
-        boolean band;
+        boolean band = false;
 
         String sql = "DELETE FROM books WHERE isbn = '"+isbn+"';";
 
@@ -54,33 +54,11 @@ public class BookDao {
             Connection conn = JDBCUtilities.getConnection();
             Statement stmt = conn.createStatement();
         ) {
-
-            stmt.executeUpdate(sql);
-            band = true;
-        } 
-
-        return band;
-    }
-
-    public boolean validarVenta(String isbn) throws SQLException {
-        boolean band = true;
-
-        String sql = "SELECT count() as sale FROM sales s JOIN books b WHERE b.id = s.id_book AND b.isbn = '"+isbn+"';";
-        
-        try (
-            Connection conn = JDBCUtilities.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-        ) {
-
-            if (rs.next()) { 
-                int sale = rs.getInt("sale");
-                if (sale == 0) {
-                    band = false;
-                }
+            int aux = stmt.executeUpdate(sql);
+            if (aux > 0) {
+                band = true;
             }
         } 
-
         return band;
     }
 
@@ -108,7 +86,7 @@ public class BookDao {
         Book book = null;
         ResultSet rs = null;
 
-        String sql = "SELECT title, isbn, year FROM books where isbn = '"+isbn+"';";
+        String sql = "SELECT * FROM books where isbn = '"+isbn+"';";
 
         try (
             Connection conn = JDBCUtilities.getConnection();
@@ -118,6 +96,7 @@ public class BookDao {
 
             if (rs.next()) {
                 book = new Book();
+                book.setId(rs.getInt("id"));
                 book.setTitle(rs.getString("title"));
                 book.setIsbn(rs.getString("isbn"));
                 book.setYear(rs.getInt("year"));

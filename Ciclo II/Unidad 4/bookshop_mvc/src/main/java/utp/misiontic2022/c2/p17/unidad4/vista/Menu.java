@@ -60,19 +60,26 @@ public class Menu {
     private static void create() throws IOException {
         System.out.println("---Creación de Libro---");
 
-        System.out.print("Ingrese el titulo del libro: ");
-        String title = input.readLine();
-        System.out.print("Ingrese el isbn del libro: ");
-        String isbn = input.readLine();
-        System.out.print("Ingrese el año de publicación del libro: ");
-        int year = Integer.valueOf(input.readLine());
+        try {
+            System.out.print("Ingrese el titulo del libro: ");
+            String title = input.readLine();
+            System.out.print("Ingrese el isbn del libro: ");
+            String isbn = input.readLine();
+            System.out.print("Ingrese el año de publicación del libro: ");
+            int year = Integer.valueOf(input.readLine());
+            System.out.print("Ingrese las unidades del stock: ");
+            int amount = Integer.valueOf(input.readLine());
 
-        Book book = controlador.createBook(title, isbn, year);
+            Book book = controlador.createBook(title, isbn, year);
 
-        if (book != null) {
-            System.out.println("Libro creado correctamente!");
-        } else {
-            System.out.println("El libro ya se encuentra en la base de datos.");
+            if (book != null) {
+                controlador.createStock(isbn, amount);
+                System.out.println("Libro creado correctamente!");
+            } else {
+                System.out.println("El libro ya se encuentra en la base de datos.");
+            }
+        } catch (Exception e) {
+            System.err.println(e);
         }
     }
 
