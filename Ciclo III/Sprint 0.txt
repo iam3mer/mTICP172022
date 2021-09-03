@@ -1,0 +1,8 @@
+* Product Backlog (Priorizado)
+* Repositorio (Github)
+* Gestión de configuración
+* Historias de usuario (del sprint, 3 a 5)
+* Configuración DevOps (Azure o Jira)
+* Mookups
+* UML (Casos de UML)
+* Documentación de software (Manual de usuario, Documentación)
