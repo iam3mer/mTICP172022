@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(189, 189, 189);
+}
+
+.container {
+    background-color: azure;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    /* grid-template-rows: 10% 80% 10%; */
+    grid-template-areas: 
+        "header header header header"
+        "section section section aside"
+        ". footer footer footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: antiquewhite;
+}
+
+.section {
+    grid-area: section;
+    background-color: aqua;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: aquamarine;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: bisque;
+}
+
+.miBoton {
+    background-image: url('imagen1.png');
+    background-size: 100px 130px;
+    height: 134px;  
+    width: 104px;
+}
+
+div.item p {
+    margin: 10px;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.item {
+    width: 300px;
+}
+
+@media (max-width: 816px) {
+    .item {
+        width: 590px;
+    }
+}

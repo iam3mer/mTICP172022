@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 5px;
+}
+
+.item {
+    display: grid;
+    width: 100px;
+    background: aqua;
+    justify-content: center;
+    align-content: center;
+}
