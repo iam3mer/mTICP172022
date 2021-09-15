@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <title>Vue 2</title>
+</head>
+<body>
+    
+    <div id="HM">
+        <p>
+            {{ xyz }}
+        </p>
+        <p v-html="xyz"></p>
+        <p>
+            Año: {{ anio }}
+        </p>
+        <p>
+            Resta: {{ resta }}
+        </p>
+        <p>
+            {{ true ? "Verdadero": "Falso"}}
+        </p>
+        <p v-if="seen">
+            {{ reverso() }}
+        </p>
+        <p>
+            <a v-bind:href="url" :target="target">Google</a>
+        </p>
+        <button v-on:click="xyz = '-------------'" v-bind:id="valor">Cambio 1</button>
+        <button @click="xyz = '**************'">Cambio 2</button>
+    </div>
+
+    <script src="js/introVUE2.js"></script>
+</body>
+</html>
