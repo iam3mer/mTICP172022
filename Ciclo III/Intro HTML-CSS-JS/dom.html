@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <header id="header" class="bg-info text-white p-4 mb-2">
+        <div class="container">
+            <h1 id="title-header">Agregar y Eliminar</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div id="main" class="card card-body">
+            <h2 class="title">Agregar Elemento</h2>
+        
+            <form id="inputForm" action="" class="form-control mb-2">
+                <input id="item" type="text" class="form-control mb-2">
+                <input type="submit" class="btn btn-info" value="Agregar">
+            </form>
+
+            <h2 class="title">Lista de elementos</h2>
+            <ul id="items" class="list-group">
+                <!-- <li class="list-group-item">item 1</li>
+                <li class="list-group-item">item 2</li>
+                <li class="list-group-item">item 3</li> -->
+            </ul>
+        </div>
+    </div>
+    
+    <script src="dom.js"></script>
+</body>
+</html>
