@@ -21,7 +21,7 @@
         color="orange lighten-2"
         text
       >
-        Explore
+        Ir al sitio
       </v-btn>
 
       <v-spacer></v-spacer>
@@ -48,6 +48,7 @@
 
 <script>
   export default {
+    name: 'MyCard',
     data: () => ({
       show: false
     }),

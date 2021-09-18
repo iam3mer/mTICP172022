@@ -32,7 +32,10 @@
 
           <v-list-item-content>
             <v-list-item-title>
-              <router-link :to="{ name: item.url }">
+              <router-link
+                :to="{ name: item.url }"
+                style="text-decoration: none; color: inherit;"
+              >
                 {{ item.title }}
                 </router-link>
             </v-list-item-title>
@@ -98,7 +101,7 @@
       </v-container>
     </v-main>
 
-    <v-footer
+    <!-- <v-footer
       dark
       padless
       app
@@ -133,30 +136,22 @@
         {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
       </v-card-text>
     </v-card>
-    </v-footer>
+    </v-footer> -->
 
   </v-app>
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
   data: () => ({
-    drawer: false,
-    group: null,
+    drawer: true,
     items: [
-        { title: 'Inicio', url: 'Inicio', icon: 'mdi-home-city' },
-        { title: 'Ofertas', url: 'Ofertas', icon: 'mdi-feature-search' },
-        { title: 'Equipo', url: 'Equipo', icon: 'mdi-account' },
-      ],
-    icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram',
-      ],
+          { title: 'Inicio', url: 'Home', icon: 'mdi-home-city' },
+          { title: 'appCorreo', url: 'Correo', icon: 'mdi-format-list-bulleted' },
+          { title: 'appInfoTarjeta', url: 'InfoCard', icon: 'mdi-card-bulleted-outline' },
+        ],
   }),
 };
 </script>
