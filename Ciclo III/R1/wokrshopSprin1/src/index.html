@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera pagina web</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            max-width: 1400px;
+            min-width: 375px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 0;
+            margin-bottom: 0;
+            color: #222222;
+        }
+
+        .header-section {
+            margin-bottom: 100px;
+        }
+
+        .header-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+
+        }
+
+        .site-title {
+            width: 30%;
+        }
+
+        .site-nav {
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .site-nav>a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .site-nav>a:hover {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            width: 30%;
+        }
+
+        .logo-container__site-logo {
+            height: 80px;
+        }
+
+        .banner {
+            width: 100%;
+        }
+
+        .banner>img {
+            width: 100%;
+            height: 400px;
+            max-width: 1400px;
+            object-fit: cover;
+        }
+
+        .services-section,
+        .seccion-noticias,
+        .seccion-equipo {
+            display: flex;
+            margin-bottom: 100px;
+        }
+
+        .seccion-noticias,
+        .header-container{
+            background-color: #f7f7f7
+
+        }
+
+        .seccion-noticias {
+            flex-wrap: wrap;
+        }
+
+        .services-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .news-info {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .news-header {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .news-info__title {
+            align-self: center;
+        }
+
+        .seccion-pie {
+            background-color: #25294f;
+            height: 200px;
+            display: flex;
+            color: white;
+            justify-content: space-evenly;
+        }
+
+        .services-info__imagen {
+            border-radius: 50%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .team-info{
+            width: 25%;
+            padding: 15px;
+        }
+
+        .team-info__imagen{
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+
+<!-- inicio encabezado del sitio -->
+    <div class="header-section">
+        <div class="header-container">
+
+            <div class="site-title">
+                <h1>Una web</h1>
+            </div>
+            
+            <!-- Inicio menú navegación -->
+            <ul class="site-nav">
+                <a href="#">Inicio</a>
+                <a href="#services">Servicios</a>
+                <a href="#news">Noticias</a>
+                <a href="#team">Nuestro equipo</a>
+            </ul>
+            <!-- Fin menú navegación -->
+
+            
+            
+            <div class="logo-container">
+                <img class="logo-container__site-logo" src="./logomision.png" alt="Logo MisionTic 2022">
+            </div>
+        </div>
+            
+        <div class="banner">
+            <img src="./banner.jpg" alt="A banner image">
+        </div>
+    </div>
+<!-- fin encabezado del sitio -->
+
+
+    <!-- inicio contenido principal -->
+    <div>
+
+
+        <h1>Servicios</h1>
+        <!-- inicio sección de servicios -->
+        <div id="servicios" class="services-section">
+            <article class="services-info">
+                <img class="services-info__imagen" src="http://placeimg.com/200/200/nature" alt="">
+                <h2 class="services-info__title">Servicio 1</h2>
+                <p class="services-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+            <article class="services-info">
+                <img class="services-info__imagen" src="http://placeimg.com/200/200/tech" alt="">
+                <h2 class="services-info__title">Servicio 2</h2>
+                <p class="services-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+            <article class="services-info">
+                <img class="services-info__imagen" src="http://placeimg.com/200/200/people" alt="">
+                <h2 class="services-info__title">Servicio 3</h2>
+                <p class="services-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+        </div>
+        <!-- fin sección de servicios -->
+
+
+
+        <h1>Noticias</h1>
+        <!-- inicio sección de noticias -->
+        <div id="noticias" class="seccion-noticias">
+            <article class="news-info">
+                <div class="news-header">
+                    <img class="news-info__imagen" src="http://placeimg.com/400/200/animals" alt="">
+                    <h2 class="news-info__title">Noticia 1</h2>
+                </div>
+                <p class="news-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+            <article class="news-info">
+                <div class="news-header">
+                    <img class="news-info__imagen" src="http://placeimg.com/400/200/tech" alt="">
+                    <h2 class="news-info__title">Noticia 2</h2>
+                </div>
+                <p class="news-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+            <article class="news-info">
+                <div class="news-header">
+                    <img class="news-info__imagen" src="http://placeimg.com/400/200/arch" alt="">
+                    <h2 class="news-info__title">Noticia 3</h2>
+                </div>
+                <p class="news-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+            <article class="news-info">
+                <div class="news-header">
+                    <img class="news-info__imagen" src="http://placeimg.com/400/200/people" alt="">
+                    <h2 class="news-info__title">Noticia 4</h2>
+                </div>
+                <p class="news-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+        </div>
+        <!-- fin sección de noticias -->
+
+
+        <h1>Equipo</h1>
+        <!-- inicio sección de equipo -->
+        <section id="team" class="seccion-equipo">
+
+            <article class="team-info">
+                <img class="team-info__imagen" src="http://placeimg.com/100/200/people" alt="">
+                <h2 class="team-info__title">Integrante 1</h2>
+                <p class="team-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+            <article class="team-info">
+                <img class="team-info__imagen" src="http://placeimg.com/100/200/tech" alt="">
+                <h2 class="team-info__title">Integrante 2</h2>
+                <p class="team-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+            <article class="team-info">
+                <img class="team-info__imagen" src="http://placeimg.com/100/200/nature" alt="">
+                <h2 class="team-info__title">Integrante 3</h2>
+                <p class="team-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+            <article class="team-info">
+                <img class="team-info__imagen" src="http://placeimg.com/100/200/arch" alt="">
+                <h2 class="team-info__title">Integrante 4</h2>
+                <p class="team-info__text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora quas voluptate magni repellat eligendi! Inventore voluptas
+                    voluptates quia voluptatum expedita, ducimus delectus dolore eaque maiores iusto modi eum aut corporis?
+                </p>
+            </article>
+
+        </section>
+        <!-- fin sección de equipo -->
+
+    </div>
+    <!-- fin contenido principal -->
+
+    <!-- Inicio pie del sitio -->
+    <div class="seccion-pie">
+        <article>
+            <h2>Contacto</h2>
+            <p>Aquí van varias lineas</p>
+            <p>Donde va la información de contacto</p>
+            <p>Como el teléfono y demás</p>
+        </article>
+        <article>
+            <h2>Otra Información</h2>
+            <p>Aquí van varias lineas</p>
+            <p>Donde va la otra información</p>
+            <p>Como el mapa del sitio o enlaces importantes</p>
+        </article>
+    </div>
+    <!-- fin pie del sitio -->
+
+</body>
+
+</html>
